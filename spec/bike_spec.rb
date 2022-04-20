@@ -1,7 +1,12 @@
 require './borisbikes.rb'
-describe 'Bike' do
-  it 'it exists, is the bike working' do
+RSpec.describe Bike do
+  it 'exists' do
     bike = Bike.new
-    expect(bike).to eq true
+    expect(bike)
   end
+  it 'says if bike is working' do
+    bike = Bike.new
+    expect(bike).to respond_to(:working?)
+  end
+
 end
